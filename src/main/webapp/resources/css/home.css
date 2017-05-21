@@ -1,0 +1,319 @@
+.side-bar{
+    background: #595959;
+    width: 97px;
+    height:100%;
+    float: left;
+
+
+}
+.menu{
+    height: 90px;
+/*background: palevioletred;*/
+    text-align: center;
+
+    width: 100%;
+
+
+}
+.menu:hover{
+    background: black;
+}
+.menu-home{
+    height: 90px;
+    background: black;
+    text-align: center;
+
+    width: 100%;
+
+
+}
+.text-side-bar{
+    font-size: 20px;
+}
+.icons-side-bar{
+    width: 50px;
+
+    color: white;
+    font-size: 45px;
+    text-align: center;
+
+
+}
+.a-whiteColor-side-bar{
+    color: white;
+
+}
+.icon{
+    border-radius: 100%;
+    border: white solid 1px;
+    background:black;
+    text-align: center;
+    width: 80px;
+    height:80px;
+    float: left;
+margin-left: 60px;
+
+    opacity: 0.3;
+}
+.icon-active{
+    border: white solid 1px;
+    border-radius: 100%;
+    background: #30bd3a;
+    text-align: center;
+    width: 80px;
+    height:80px;
+    float: left;
+    margin-left: 60px;
+
+
+
+}
+.icon-active:hover{
+    background: #40ee4b;
+}
+.icon:hover{
+   opacity: 1;
+
+}
+.text{
+
+    color: white;
+    text-align: center;
+}
+.icon-add-category{
+    margin-top: 20px;
+    font-size: 40px;
+}
+.spending-income{
+    background: #727272;
+    width: 180px;
+    margin-left: 250px;
+    margin-bottom: 30px;
+
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    color: #cccccc;
+
+}
+.balance{
+/*background: gold;*/
+    width: 180px;
+    margin-left: 150px;
+    margin-bottom: 30px;
+
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    color: #cccccc;
+
+}
+/*.balance:hover{*/
+    /*color: white;*/
+    /*font-size: 30px;*/
+/*}*/
+
+.spending{
+    background: #ff7c76;
+}
+ .add-account{
+     /*background: dimgray;*/
+     border: solid white 2px;
+     height: 400px;
+     width: 600px;
+     margin-left: 400px;
+     margin-right: 400px;
+     margin-top: 30px;
+     float: left;
+     display: none;
+ }
+ .input-center{
+
+     height: 40px;
+margin-left: 50px;
+     font-size: 20px;
+
+
+ }
+ .icon-choose{
+     border-radius: 100%;
+     border: solid white 1px;
+     background: #090a09;
+     color: white;
+     text-align: center;
+     width: 80px;
+     height:80px;
+     float: left;
+ margin-left: 30px;
+     margin-top: 10px;
+
+
+ }
+ .icon-choose:hover{
+     background: white;
+     color: black;
+ }
+ #icon-choose-first{
+     margin-left: 150px;
+ }
+ .text-center{
+     color: white;
+     text-align: center;
+ }
+ button{
+     background: #090a09;
+     color: white;
+     height: 50px;
+     width: 130px;
+     margin-top: 10px;
+     border: solid white 2px;
+     margin-left: 250px;
+     font-size: 20px;
+ }
+ button:hover{
+     background:  white;
+     color: black;
+ }
+#icons{
+
+    color: white;
+    background: #ee35ba;
+
+}
+.dropdawn{
+    border: solid white 1px;
+    width: 120px;
+    margin-left: 40px;
+   display: none;
+margin-left: 40px;
+
+
+  }
+
+.balance:hover .dropdawn{
+    display: block;
+}
+.balance:hover #ammount-name{
+    visibility: hidden;
+}
+
+.a-menu{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+.a-menu:hover{
+    background: white;
+    color: black;
+
+}
+hr{
+    width: 1400px;
+    opacity: 0.5;
+}
+.add-category{
+
+    border: solid white 2px;
+    height: 500px;
+    width: 600px;
+  margin-top: 30px;
+    margin-left: 450px;
+    margin-right: 300px;
+    float:left;
+    display: none;
+}
+.icon-category{
+    border: white solid 1px;
+    border-radius: 100%;
+    background: #c42619;
+    text-align: center;
+    width: 80px;
+    height:80px;
+    float: left;
+    margin-left: 60px;
+}
+#icons-category{
+    float: left;
+    /*background: mediumpurple;*/
+}
+
+.right{
+    /*background: sandybrown;*/
+    float: left;
+    width: 1470px;
+    height: 100%;
+    overflow: scroll;
+}
+.dropdawn-categories{
+    width: 100px;
+    margin-left: 50px;
+text-align: center;
+    float: left;
+    display: none;
+    border: solid 1px white;
+}
+.balance:hover .dropdawn-categories{
+    display: block;
+}
+#ammount-name{
+    color: #e58f1b;
+}
+#income{
+    background: green;
+    border-radius: 3px;
+    width: 180px;
+    margin-left: 250px;
+    margin-bottom: 30px;
+color: white;
+    font-size: 30px;
+    font-family:Arial;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+}
+#spending{
+    background: #e93d28;
+    border-radius: 3px;
+    width: 180px;
+    margin-left: 250px;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 30px;
+    font-family:Arial;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+}
+#balance-all{
+    background: #c48825;
+    border-radius: 3px;
+    width: 180px;
+    margin-left: 250px;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 30px;
+    font-family:Arial;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+}
+.menu-avatar{
+    height: 140px;
+    /*background: palevioletred;*/
+    text-align: center;
+
+    width: 100%;
+
+
+}
+.addPhoto{
+   font-size: 15px;
+    color: white;
+}
+.img-avatar{
+    width: 100%;
+    height: 100px;
+    background: grey;
+    opacity: 0.5;
+}
