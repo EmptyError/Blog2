@@ -16,7 +16,9 @@
 <body>
 <form:form action="/registration" method="post" modelAttribute="user">
     <div class="login">
+
         <div class="input-icon"> <i class="fa fa-user-circle-o icons"> </i>
+
             <form:errors path="firstName" cssClass="errors"></form:errors>
             <form:input path="firstName" placeholder="First Name" /></div>
         <div class="input-icon">
@@ -32,6 +34,7 @@
             <i class="fa fa-phone-square icons"> </i>
             <form:errors path="phone" cssClass="errors"></form:errors>
             <form:input path="phone" type="text"  placeholder="Phone"/>
+
         </div>
         <div class="input-icon">
             <i class="fa fa-user icons"> </i>

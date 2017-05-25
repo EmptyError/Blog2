@@ -2,6 +2,7 @@ package com.yana.home.persistence.service.implementation;
 
 import com.yana.home.persistence.domain.Account;
 import com.yana.home.persistence.domain.Income;
+import com.yana.home.persistence.domain.User;
 import com.yana.home.persistence.repository.IncomeRepo;
 import com.yana.home.persistence.service.IncomeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class IncomeServiceImpl implements IncomeService {
     private IncomeRepo incomeRepo;
 
     @Override
-    public void add(String description,double amount, String date, Account accountTo) {
+    public void add(String description,double amount, String date, Account accountTo,User user) {
 Income income=new Income();
 income.setDescription(description);
 income.setAmount(amount);
@@ -29,14 +30,20 @@ String [] dateArray=date.split("-");
         Calendar calendar= new GregorianCalendar(Integer.parseInt(dateArray[0]),Integer.parseInt(dateArray[1]),Integer.parseInt(dateArray[2]));
 income.setDate(calendar.getTime());
 income.setAccountTo(accountTo);
+income.setUser(user);
 incomeRepo.save(income);
 
     }
 
     @Override
-    public double findSumIncomes() {
-        if(incomeRepo.findAll().size()>0) {
-            return incomeRepo.findSumIncomes();
+    public List<Income> findAllByUser(User user) {
+        return incomeRepo.findAllByUser(user);
+    }
+
+    @Override
+    public double findSumIncomes(User user) {
+        if(incomeRepo.findAllByUser(user).size()>0) {
+            return incomeRepo.findSumIncomes(user);
         }
         else return 0;
     }

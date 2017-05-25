@@ -1,6 +1,9 @@
 package com.yana.home.validation;
 
 import com.yana.home.persistence.domain.User;
+import com.yana.home.persistence.service.UserService;
+import com.yana.home.utill.ValidationPatterns;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -11,6 +14,8 @@ import org.springframework.validation.Validator;
  */
 @Component
 public class UserValidator implements Validator {
+    @Autowired
+    private UserService userService;
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.equals(aClass);
@@ -25,7 +30,15 @@ public class UserValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"password","invalid.password");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"login","invalid.login");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors,"email","invalid.email");
+if(user.getPhone().length()<13){
+    errors.rejectValue("phone","invalid.characters");
+}
+if(!user.getEmail().matches(ValidationPatterns.EMAIL_PATTERN)){
+    errors.rejectValue("email","invalid.wrongEmailFormat");
+}
+if(userService.findByLogin(user.getLogin())!=null){
+    errors.rejectValue("firstName","invalid.alreadyExists");
 
-
+}
     }
 }

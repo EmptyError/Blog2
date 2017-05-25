@@ -24,7 +24,7 @@ public class Account {
     private User user;
     @OneToMany(mappedBy = "accountFrom", fetch = FetchType.EAGER )
     private List<Spending> spendings;
-    @OneToMany(mappedBy = "accountTo",fetch = FetchType.EAGER )
+    @OneToMany(mappedBy = "accountTo",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private  List<Income> incomes;
 
     public Account(String name, double amount, String icon) {

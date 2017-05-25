@@ -52,7 +52,8 @@ public class BaseController {
         model.addAttribute("currencyList",currencyList);
         model.addAttribute("user",user);
         model.addAttribute("sumSpending",spendingService.sumAllSpendingsForUser(user));
-        model.addAttribute("sumIncomes",incomeService.findSumIncomes());
+        model.addAttribute("sumIncomes",incomeService.findSumIncomes(user));
+        model.addAttribute("balance",accountService.balanceAccount(user));
         model.addAttribute("categories",categories);
 
         return "home";
@@ -80,6 +81,7 @@ public class BaseController {
         }
     }
     @RequestMapping(value = "/account/add/",method = RequestMethod.POST)
+
     @ResponseBody
     public  void  addAccount(@RequestBody String [] array,Principal principal){
         User user=userService.findByLogin(principal.getName());
@@ -119,9 +121,10 @@ public class BaseController {
 
     @RequestMapping(value ="/add/income/{id}",method = RequestMethod.POST)
     public  String addIncomeProcessing(@PathVariable Integer id,@RequestParam("description") String description,@RequestParam("amount") double amount,
-                                       @RequestParam("date") String date){
+                                       @RequestParam("date") String date,Principal principal){
         Account account=accountService.findOne(id);
-        incomeService.add(description,amount,date,account);
+        User user=userService.findByLogin(principal.getName());
+        incomeService.add(description,amount,date,account,user);
         System.out.println( (account.getAmount()+amount));
         account.setAmount(account.getAmount()+amount);
 

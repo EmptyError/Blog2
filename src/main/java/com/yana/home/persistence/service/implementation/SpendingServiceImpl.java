@@ -30,6 +30,7 @@ public class SpendingServiceImpl implements SpendingService {
     @Override
     public double sumAllSpendingsForUser(User user) {
         if(spendingRepo.findAllByUser(user).size()>0) {
+            System.out.println(spendingRepo.findAllByUser(user));
             return spendingRepo.sumAllSpendingsForUser(user);
         }
         else return 0;

@@ -36,9 +36,18 @@ accountRepo.save(account);
         return accountRepo.findAll();
     }
 
+
     @Override
     public Account findOne(int id) {
         return accountRepo.findOne(id);
+    }
+
+    @Override
+    public double balanceAccount(User user) {
+        if(accountRepo.findByUser(user).size()>0) {
+            return accountRepo.balanceAccounts(user);
+        }
+        else return 0;
     }
 
     @Override

@@ -13,6 +13,8 @@ public interface AccountService  {
     public  void delete(int id);
     public void edit(Account account);
     public List<Account> findAll();
+
     public  List<Account>findByUser(User user);
     Account findOne(int id);
+    public double balanceAccount(User user);
 }

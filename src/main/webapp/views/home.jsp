@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="side-bar">
-<div class="menu-avatar a-whiteColor-side-bar text-side-bar"><img class="img-avatar" src="/resources/img/${user.pathToPhoto}" alt="avatar"> <a  class=" addPhoto" href="/add/photo/">Add Photo </a>${user.login} </div>
+<div class="menu-avatar a-whiteColor-side-bar text-side-bar"><a  href="/add/photo/"><img class="img-avatar" src="/resources/img/${user.pathToPhoto}" alt="avatar">  </a>${user.login} </div>
 
 <div class="menu-home a-whiteColor-side-bar text-side-bar"> <a  class="a-whiteColor-side-bar text-side-bar" href="/"><i class="fa fa-home icons-side-bar"> </i>  </a>Home</div>
 <div class="menu a-whiteColor-side-bar text-side-bar"> <a  class="a-whiteColor-side-bar text-side-bar" href="/"><i class="fa fa-plus icons-side-bar"> </i> </a>Incomes</div>
@@ -25,7 +25,7 @@
 <div class="menu a-whiteColor-side-bar text-side-bar"><a  class="a-whiteColor-side-bar text-side-bar" href="/logout"><i class="fa fa-sign-out icons-side-bar"> </i>  </a>LogOut</div>
 </div>
 <div class="right">
-<div id="balance-all" >Balance:</div>
+<div id="balance-all" >Balance:${balance}</div>
 <div id="spending">Spending: ${sumSpending}</div>
 <div id="income">Income: ${sumIncomes}</div>
 

@@ -32,6 +32,22 @@ public class Income {
         this.accountTo = accountTo;
     }
 
+    public Income(double amount, String description, Date date, Account accountTo, User user) {
+        this.amount = amount;
+        this.description = description;
+        this.date = date;
+        this.accountTo = accountTo;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Income() {
     }
 
