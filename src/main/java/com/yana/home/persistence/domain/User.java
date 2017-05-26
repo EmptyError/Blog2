@@ -20,6 +20,7 @@ public class User {
     private String pathToPhoto;
     private  String password;
     private Date registrationDate;
+
     private String activationKey;
     private String resetKey;
     private boolean active;

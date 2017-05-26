@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface UserRepo extends JpaRepository<User,Integer> {
 User findByLogin(String login);
+User findByActivationKey(String activationKey);
 
 
 }

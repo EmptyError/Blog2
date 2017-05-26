@@ -196,5 +196,10 @@ public String addPhoto(Principal principal, @RequestParam("photo") MultipartFile
     userService.addPhoto(multipartFile,user);
     return "redirect:/";
 }
+@RequestMapping(value = "/activate/{activationKey}",method = RequestMethod.GET)
+String activate(@PathVariable String activationKey){
+    userService.activate(activationKey);
+    return "redirect:/";
+}
 
 }

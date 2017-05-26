@@ -16,4 +16,6 @@ public interface UserService {
     public User findByLogin(String login);
     public List<User> findAll();
     public void addPhoto(MultipartFile photo,User user);
+    public  void activate(String activationKey);
+    public  User findByActivationKey(String activationKey);
 }
