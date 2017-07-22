@@ -116,19 +116,22 @@ public class BaseController {
         User user=userService.findByLogin(principal.getName());
         model.addAttribute("account",account);
         model.addAttribute("user",user);
+
         return "addIncome";
     }
 
     @RequestMapping(value ="/add/income/{id}",method = RequestMethod.POST)
-    public  String addIncomeProcessing(@PathVariable Integer id,@RequestParam("description") String description,@RequestParam("amount") double amount,
-                                       @RequestParam("date") String date,Principal principal){
+    public  String addIncomeProcessing(@RequestParam("description") String description,@RequestParam("amount") double amount,
+                                       @RequestParam("date")String date,@PathVariable Integer id,
+                                       Principal principal){
         Account account=accountService.findOne(id);
         User user=userService.findByLogin(principal.getName());
-        incomeService.add(description,amount,date,account,user);
-        System.out.println( (account.getAmount()+amount));
+        System.out.println(date);
+       incomeService.add(description,amount,date,account,user);
         account.setAmount(account.getAmount()+amount);
+accountService.edit(account);
 
-        accountService.add(account);
+
 
         return "redirect:/";
     }

@@ -26,8 +26,10 @@ public class IncomeServiceImpl implements IncomeService {
 Income income=new Income();
 income.setDescription(description);
 income.setAmount(amount);
+        System.out.println(date);
 String [] dateArray=date.split("-");
         Calendar calendar= new GregorianCalendar(Integer.parseInt(dateArray[0]),Integer.parseInt(dateArray[1]),Integer.parseInt(dateArray[2]));
+        System.out.println(calendar.getTime());
 income.setDate(calendar.getTime());
 income.setAccountTo(accountTo);
 income.setUser(user);
@@ -35,14 +37,28 @@ incomeRepo.save(income);
 
     }
 
+
+//    @Override
+//    public void add(Income income) {
+//        incomeRepo.save(income);
+//    }
+//
+//    @Override
+//    public void addDate(String date,Income income) {
+//        String [] dateArray=date.split("-");
+//       Calendar calendar= new GregorianCalendar(Integer.parseInt(dateArray[0]),Integer.parseInt(dateArray[1]),Integer.parseInt(dateArray[2]));
+//income.setDate(calendar.getTime());
+//incomeRepo.save(income);
+//    }
+
     @Override
     public List<Income> findAllByUser(User user) {
-        return incomeRepo.findAllByUser(user);
+        return incomeRepo.findAllByUserOrderByDateAsc(user);
     }
 
     @Override
     public double findSumIncomes(User user) {
-        if(incomeRepo.findAllByUser(user).size()>0) {
+        if(incomeRepo.findAllByUserOrderByDateAsc(user).size()>0) {
             return incomeRepo.findSumIncomes(user);
         }
         else return 0;

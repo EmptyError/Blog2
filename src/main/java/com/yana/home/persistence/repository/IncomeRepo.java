@@ -13,5 +13,5 @@ import java.util.List;
 public interface IncomeRepo extends JpaRepository<Income,Integer> {
     @Query(value = "select  sum(i.amount) from  Income i where i.user=?1")
     public double findSumIncomes(User user);
-    public List<Income> findAllByUser(User user);
+    public List<Income> findAllByUserOrderByDateAsc(User user);
 }
