@@ -24,18 +24,20 @@
         <!--<property name="username" value="root"/>-->
         <!--<property name="password" value="root"/>-->
     <!--</bean>-->
-    <!---->
+
     <!--<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">-->
         <!--<constructor-arg ref="hikariConfig"/>-->
     <!--</bean>-->
-    <bean class="java.net.URI" id="dbUrl">
-        <constructor-arg value="#{systemEnvironment['CLEARDB_DATABASE_URL']}"/>
-    </bean>
+
+
+    <!--<bean class="java.net.URI" id="dbUrl">-->
+        <!--<constructor-arg value="#{systemEnvironment['CLEARDB_DATABASE_URL']}"/>-->
+    <!--</bean>-->
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="url" value="#{ 'jdbc:mysql://' + @dbUrl.getHost() + @dbUrl.getPath() }"/>
-        <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
-        <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+        <property name="url" value="jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_2a10ac2d32a974b?reconnect=true"/>
+        <property name="username" value="b818a55888d098"/>
+        <property name="password" value="66c97b3a"/>
     </bean>
 <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
     <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
